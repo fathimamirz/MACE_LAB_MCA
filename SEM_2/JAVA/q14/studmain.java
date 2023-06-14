@@ -41,13 +41,13 @@ class studmain
   {
      Scanner sc= new Scanner(System.in);
      System.out.println("name: ");
-     String name=sc.nextLine();
+     String name=sc.next();
      System.out.println("address: ");
-     String add=sc.nextLine();
-     System.out.println("sports score; ");
+     String add=sc.next();
+     System.out.println("sports score: ");
      int score=sc.nextInt();
      System.out.println("grade: ");
-     String grade=sc.nextLine();
+     String grade=sc.next();
      results r= new results(name,add,score,grade);
      r.display();
   }
