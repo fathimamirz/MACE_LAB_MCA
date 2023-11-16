@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Mico</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+  <!-- Custom styles for this template -->
+  <link href="static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="static/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container">
+          <!-- <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +01 123455678990
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : demo@gmail.com
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+          </div> -->
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand">
+              <img src="static/images/logo.png" alt="">
+            </a>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+                  <!-- </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html"> About</a>
+                  </li> -->
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('examp')}}">Predict</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="doctor.html">Doctors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="testimonial.html">Testimonial</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li> -->
+                </ul>
+              </div>
+              <!-- <div class="quote_btn-container">
+                <a href="">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Login
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Sign Up
+                  </span>
+                </a>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div> -->
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+  <!-- book section -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="/predict" method="POST">
+            <h4>
+              Chronic Kidney Disease <span>PREDICT</span>
+            </h4>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">Age </label>
+                <input type="number" class="form-control" id="inputPatientName" placeholder="eg:35" pattern="^(?:[2-9]|[1-8][0-9]|90)$" min="2" max="90" name="age" required>
+              </div>
+              <div class="form-group col-lg-4">
+                 <label for="inputDoctorName">Blood Pressure</label>
+                <!-- <select name="" class="form-control wide" id="inputDoctorName">
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>  -->
+                  <input type="number" class="form-control" id="inputPatientName" placeholder="eg:80" name="bp" min="50" max="180" required>
+                </select>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Specific Gravity</label>
+                <!-- <select name="" class="form-control wide" id="inputDepartmentName">
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option> -->
+                  <input type="number" class="form-control" id="inputPatientName" placeholder="1.005 - 1.025" step="0.001" name="sg" min="0.000" max="1.300" required>
+                </select>
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Albumin</label>
+                <input type="number" class="form-control" id="inputPhone" placeholder="3.4 - 5.4" step="0.01" name="al" min="0.0" max="8.0" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Sugar</label>
+
+                <select name="su" class="form-control wide" id="inputSymptoms" required>
+                  <option value="">--select-- </option>
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                  </select>
+
+                <!-- <input type="numbe" class="form-control" id="inputSymptoms" placeholder="Sugar" name="su"> -->
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDate">RBC</label>
+                <select name="rbc" class="form-control wide" id="inputDoctorName" required>
+                  <option value="">--select-- </option>
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                  </select>
+                <!-- <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
+                  <input type="text" class="form-control" readonly>
+                  <span class="input-group-addon date_icon">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span> -->
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">PC </label>
+                <select name="pc" class="form-control wide" id="inputDoctorName" required>
+                  <option value="">--select-- </option>
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                  </select>
+                <!-- <input type="text" class="form-control" id="inputPatientName" placeholder=""> -->
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDoctorName">PCC</label>
+                <select name="pcc" class="form-control wide" id="inputDoctorName" required>
+                  <option value="">--select-- </option>
+                  <option value="0">Not Present</option>
+                  <option value="1">Present</option>
+                </select>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Bacteria</label>
+                <select name="ba" class="form-control wide" id="inputDepartmentName" required>
+                  <option value="">--select-- </option>
+                  <option value="0">Not Present</option>
+                  <option value="1">Present</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Blood Glucose Random</label>
+                <input type="number" class="form-control" id="inputPhone" placeholder="eg:125" name="bgr" min="22" max="490" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Blood Urea</label>
+                <input type="number" class="form-control" name="bu" id="inputSymptoms" placeholder="5 - 20" steo="0.001" min="0.000" max="500" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDate">Serum Creatinine </label>
+                <input type="number" class="form-control" name="sc" id="inputSymptoms" step="0.01" placeholder="0.8 - 1.3" min="0.4" max="76.0" required>
+                <!-- <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
+                  <input type="text" class="form-control" readonly>
+                  <span class="input-group-addon date_icon">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                </div> -->
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">Sodium</label>
+                <input type="number" class="form-control" id="inputPatientName" name="sod" step="0.01" placeholder="135 - 145" min="4.5" max="300.0" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDoctorName">Potassium</label>
+                <!-- <select name="" class="form-control wide" id="inputDoctorName">
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                </select> -->
+                <input type="number" class="form-control" id="inputPatientName" name="pot" step="0.01" placeholder="3.5 - 5.2" min="2.5" max="47.0" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Hemoglobin</label>
+                 <input type="number" class="form-control" id="inputPatientName" name="hemo" step="0.01" min="3.1" max="20.0" placeholder="12 - 15" required>
+                <!-- <select name="" class="form-control wide" id="inputDepartmentName">
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                  <option value="Normal distribution ">Normal distribution </option>
+                </select> -->
+              </div>
+              <!-- <input type="text" class="form-control" id="inputPatientName" placeholder="Potassium"> -->
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Packed Cell Volume (PCV)</label>
+                <input type="number" class="form-control" id="inputPhone" name="pcv" step="0.01" min="0" max="90" placeholder="35.5 - 49.9" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">White Blood Cell Count (WC)</label>
+                <input type="number" class="form-control" id="inputSymptoms" name="wc" placeholder="4500 - 11000" min="2200" max="21600" required>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDate">Red Blood Cell Count (RC)</label>
+                <!-- <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
+                  <input type="text" class="form-control" readonly>
+                  <span class="input-group-addon date_icon">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                </div> -->
+                <input type="number" class="form-control" id="inputPatientName" name="rc" step="0.001" min="2.0" max="15.0" placeholder="4.35 - 5.65" required> 
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">Hypertension  </label>
+                <select name="htn" class="form-control wide" id="inputDoctorName" required>
+                  <option value="">--select-- </option>
+                  <option value="1">Yes </option>
+                  <option value="0">No</option>
+                  
+                </select>
+                <!-- <input type="text" class="form-control" id="inputPatientName" placeholder=""> -->
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDoctorName">Diabetes Mellitus </label>
+                <select name="dm" class="form-control wide" id="inputDoctorName" required>
+                  <option value="">--select-- </option>
+                  <option value="1">Yes </option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Coronary Artery Disease</label>
+                <select name="cad" class="form-control wide" id="inputDepartmentName" required>
+                  <option value="">--select-- </option>
+                  <option value="1">Yes </option>
+                  <option value="0">No</option> 
+                </select>
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Appetite </label>
+                <select name="appet" class="form-control wide" id="inputDepartmentName" required>
+                  <option value="">--select-- </option>
+                  <option value="0">good </option>
+                  <option value="1">poor</option> 
+                </select>
+                <!-- <input type="number" class="form-control" id="inputPhone" placeholder="Appetite"> -->
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Pedal Edema</label>
+                <select name="pe" class="form-control wide" id="inputDepartmentName" required>
+                  <option value="">--select-- </option>
+                  <option value="1">Yes </option>
+                  <option value="0">No</option> 
+                </select>
+                <!-- <input type="text" class="form-control" id="inputSymptoms" placeholder="Pedal Edema"> -->
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDate">Anemia </label>
+                <select name="ane" class="form-control wide" id="inputDepartmentName" required>
+                  <option value="">--select-- </option>
+                  <option value="1">Yes </option>
+                  <option value="0">No</option> 
+                </select>
+                <!-- <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
+                  <input type="text" class="form-control" readonly>
+                  <span class="input-group-addon date_icon">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                </div> -->
+              </div>
+            </div>
+            <div class="btn-box">
+              <button type="submit" class="btn ">Predict</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end book section -->
+
+  <!-- treatment section -->
+  <dialog>
+    <button autofocus>Close</button>
+    <p>This modal dialog has a groovy backdrop!</p>
+    {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+  <section class="treatment_section layout_padding">
+    <div class="side_img">
+      <img src="images/treatment-side-img.jpg" alt="">
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Hospital <span>Treatment</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/t1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Nephrologist Care
+              </h4>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/t2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Eye Care
+              </h4>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/t3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Pediatrician Clinic
+              </h4>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/t4.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Parental Care
+              </h4>
+              <p>
+                alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</dialog>
+<!-- <button>Show the dialog</button> -->
+  <!-- end treatment section -->
+  <script>
+    const dialog = document.querySelector("dialog");
+    const showButton = document.querySelector("dialog + button");
+    const closeButton = document.querySelector("dialog button");
+    
+    // "Show the dialog" button opens the dialog modally
+    showButton.addEventListener("click", () => {
+      dialog.showModal();
+    });
+  
+    // "Close" button closes the dialog
+    closeButton.addEventListener("click", () => {
+      dialog.close();
+    });
+      </script>
+
+  <!-- info section -->
+  <!-- <section class="info_section ">
+    <div class="container">
+      <div class="info_top">
+        <div class="info_logo">
+          <a href="">
+            <img src="images/logo.png" alt="">
+          </a>
+        </div>
+        <div class="info_form">
+          <form action="">
+            <input type="email" placeholder="Your email">
+            <button>
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="info_bottom layout_padding2">
+        <div class="row info_main_row">
+          <div class="col-md-6 col-lg-3">
+            <h5>
+              Address
+            </h5>
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_links">
+              <h5>
+                Useful link
+              </h5>
+              <div class="info_links_menu">
+                <a href="index.html">
+                  Home
+                </a>
+                <a href="about.html">
+                  About
+                </a>
+                <a href="treatment.html" class="active">
+                  Treatment
+                </a>
+                <a href="doctor.html">
+                  Doctors
+                </a>
+                <a href="testimonial.html">
+                  Testimonial
+                </a>
+                <a href="contact.html">
+                  Contact us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_post">
+              <h5>
+                LATEST POSTS
+              </h5>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="images/post1.jpg" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="images/post2.jpg" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_post">
+              <h5>
+                News
+              </h5>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="images/post3.jpg" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="images/post4.png" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <!-- <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer> -->
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
