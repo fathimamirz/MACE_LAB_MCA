@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">cosmeticlist</string>
+    <string-array name="cosmetics">
+        <item>Lipstick</item>
+        <item>Foundation</item>
+        <item>eyeliner</item>
+    </string-array>
+</resources>
